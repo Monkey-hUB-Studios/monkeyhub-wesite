@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(resources/background.png);
+  background-position: center;
+  background-size: cover;
+  padding: 0 8%;
+  position: relative;
+}
+
+.language-selector {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 2;
+}
+
+.language-selector select {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.language-selector select:hover {
+  background: #ff3753;
+  border-color: #ff3753;
+}
+
+.language-selector select option {
+  background-color: #333;
+  color: #fff;
+}
+
+.language-selector select:focus option:checked {
+  background-color: #ff3753;
+  color: #fff;
+}
+
+.logo {
+  width: 120px;
+  padding: 20px 0;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+
+.content {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #fff;
+  z-index: 2;
+}
+
+.content h1 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.content p {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.content h1 span {
+  color: #ff3753;
+}
+
+.content button {
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  padding: 12px 25px;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.content button img {
+  width: 15px;
+  margin-left: 10px;
+}
+
+.content button:hover {
+  background: #ff3753;
+  border-color: #ff3753;
+}
+
+.content button:active {
+  transform: scale(0.95);
+}
+
+.countdown {
+  display: flex;
+}
+
+.countdown div {
+  flex-basis: 100px;
+}
+
+.countdown div p {
+  font-size: 4.5rem;
+  font-style: normal;
+  margin-bottom: -8px;
+}
+
+.countdown div span {
+  font-size: 1.2rem;
+}
+
+.rocket {
+  width: 250px;
+  position: absolute;
+  bottom: 33%;
+  right: 21%;
+  animation: float 5s infinite ease-in-out;
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .rocket {
+    opacity: 0.3;
+    animation: orbitSmall 15s infinite linear;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rocket {
+    opacity: 0;
+    animation: none;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+  50% { transform: translateY(-30px) rotate(10deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+}
+
+@keyframes orbitSmall {
+  0% {
+    transform: translate(0, -200px) rotate(0deg);
+  }
+  25% {
+    transform: translate(200px, 0) rotate(180deg);
+  }
+  50% {
+    transform: translate(0, 200px) rotate(90deg);
+  }
+  75% {
+    transform: translate(-200px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, -200px) rotate(360deg);
+  }
+}

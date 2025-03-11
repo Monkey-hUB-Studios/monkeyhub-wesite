@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monkey hUB</title>
+  <link rel="stylesheet" href="about.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="resources/logosm.png" type="image/icon type">
+</head>
+<body>
+
+  <div class="language-selector">
+    <select id="language" onchange="changeLanguage()">
+      <option value="no">Norsk</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+
+  <div class="about-container">
+    <a href="index.html"><img src="resources/logofull.png" class="logo"></a>
+    <div class="about-content">
+      <h1 id="about-title">Om Monkey h<span>UB</span></h1>
+
+      <section class="team-section">
+        <img src="resources/members.jpg" alt="Monkey Hub Development Team" class="team-photo">
+        <div class="team-description">
+          <h2 id="team-title">Teamet</h2>
+          <p id="team-text">Vi er en lidenskapelig gruppe av spillutviklere, designere og kreative som ønsker å bringe morsomme og engasjerende opplevelser til spillere.</p>
+        </div>
+      </section>
+
+      <section class="game-section">
+        <h2 id="game-title">Vårt kommende spill</h2>
+        <p id="game-text">Vårt neste prosjekt er et spennende eventyrspill som tar deg med på en unik reise. Utforsk nye verdener, løs gåter og oppdag skjulte hemmeligheter!</p>
+      </section>
+
+      <section class="company-section">
+        <h2 id="company-title">Om Monkey hUB</h2>
+        <p id="company-text">Monkey hUB er et kreativt studio dedikert til å utvikle unike og innovative videospill. Vi tror på historiefortelling og interaktive opplevelser for å engasjere og underholde.</p>
+      </section>
+
+      <section class="contact-section">
+        <h2 id="contact-title">Kontakt oss</h2>
+        <ul class="contact-list">
+          <li class="contact-item">Odin H. Silden - CEO: <a href="mailto:odinhsilden@gmail.com" class="contact-link">odinhsilden@gmail.com</a></li>
+          <li class="contact-item">Nathaniel M. Bø - CTO: <a href="mailto:nathanielmbo@outlook.com" class="contact-link">nathanielmbo@outlook.com</a></li>
+          <li class="contact-item">Halvard Jacob Rusten - CFO: <a href="mailto:nathanielmbo@outlook.com" class="contact-link">halvardrusten@hotmail.com</a></li>
+          <li class="contact-item">Magnus Bakke-Kvalsvik - QA Manager: <a href="mailto:magnus.bakke.kvalsvik@gmail.com" class="contact-link">magnus.bakke.kvalsvik@gmail.com</a></li>
+          <li class="contact-item">Gard Nathniel Ulvestad  - Artist: <a href="mailto:nathanielmbo@outlook.com" class="contact-link">gardulvestad@proton.me</a></li>
+          <li class="contact-item">David Manzaneda Kogulokov - Project Manager: <a href="mailto:damakocontact@gmail.com" class="contact-link">damakocontact@gmail.com</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    function changeLanguage() {
+      const lang = document.getElementById("language").value;
+
+      if (lang === "no") {
+        document.getElementById("about-title").innerHTML = "Om Monkey h<span>UB</span>";
+        document.getElementById("team-title").textContent = "Teamet";
+        document.getElementById("team-text").textContent = "Vi er en lidenskapelig gruppe av spillutviklere, designere og kreative som ønsker å bringe morsomme og engasjerende opplevelser til spillere.";
+        document.getElementById("game-title").textContent = "Vårt kommende spill";
+        document.getElementById("game-text").textContent = "Vårt neste prosjekt er et spennende eventyrspill som tar deg med på en unik reise. Utforsk nye verdener, løs gåter og oppdag skjulte hemmeligheter!";
+        document.getElementById("company-title").textContent = "Om Monkey hUB";
+        document.getElementById("company-text").textContent = "Monkey hUB er et kreativt studio dedikert til å utvikle unike og innovative videospill. Vi tror på historiefortelling og interaktive opplevelser for å engasjere og underholde.";
+        document.getElementById("contact-title").textContent = "Kontakt oss";
+      } else if (lang === "es") {
+        document.getElementById("about-title").innerHTML = "Acerca de Monkey h<span>UB</span>";
+        document.getElementById("team-title").textContent = "El equipo";
+        document.getElementById("team-text").textContent = "Somos un grupo apasionado de desarrolladores, diseñadores y creativos que buscan ofrecer experiencias divertidas y envolventes.";
+        document.getElementById("game-title").textContent = "Nuestro próximo juego";
+        document.getElementById("game-text").textContent = "Nuestro próximo proyecto es un emocionante juego de aventuras que te llevará a un viaje único. ¡Explora nuevos mundos, resuelve acertijos y descubre secretos ocultos!";
+        document.getElementById("company-title").textContent = "Sobre Monkey hUB";
+        document.getElementById("company-text").textContent = "Monkey hUB es un estudio creativo dedicado al desarrollo de videojuegos únicos e innovadores. Creemos en el poder de la narrativa y las experiencias interactivas para cautivar y entretener.";
+        document.getElementById("contact-title").textContent = "Contáctanos";
+      } else {
+        document.getElementById("about-title").innerHTML = "About Monkey h<span>UB</span>";
+        document.getElementById("team-title").textContent = "The Team";
+        document.getElementById("team-text").textContent = "We are a passionate group of game developers, designers, and creatives who strive to bring fun and immersive experiences to players.";
+        document.getElementById("game-title").textContent = "Our Upcoming Game";
+        document.getElementById("game-text").textContent = "Our next project is a thrilling adventure game that will take you on a journey like no other. Explore new worlds, solve puzzles, and uncover hidden secrets as you progress through the game.";
+        document.getElementById("company-title").textContent = "About Monkey hUB";
+        document.getElementById("company-text").textContent = "Monkey hUB is a creative studio dedicated to developing unique and innovative video games. We believe in the power of storytelling and interactive experiences to engage and entertain.";
+        document.getElementById("contact-title").textContent = "Contact Us";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memento Monkey</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="resources/logo.png" type="image/icon type">
+</head>
+<body>
+
+  <div class="language-selector">
+    <select id="language" onchange="changeLanguage()">
+      <option value="no">Norsk</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+  
+  <div class="container">
+    <a href="index.html"><img src="resources/logofull.png" class="logo"></a>
+    <div class="content">
+      <p id="working-text">Vi jobber hardt!</p>
+      <h1 id="main-heading">Vi er <span>lansering</span> snart</h1>
+
+      <div class="countdown">
+        <div>
+          <p id="days">00</p>
+          <span id="days-text">Dager</span>
+        </div>
+        <div>
+          <p id="hours">00</p>
+          <span id="hours-text">Timer</span>
+        </div>
+        <div>
+          <p id="minutes">00</p>
+          <span id="minutes-text">Minutter</span>
+        </div>
+        <div>
+          <p id="seconds">00</p>
+          <span id="seconds-text">Sekunder</span>
+        </div>
+      </div>
+      <button type="button" onclick="window.location.href='about.html';" id="learn-more-text">Lær mer</button>
+    </div>
+
+    <img src="resources/rocket.png" class="rocket">
+  </div>
+  
+  <script>
+    var countDownDate = new Date("Apr 1, 2025 00:00:00").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+  
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+      }
+    }, 1000);
+
+    function changeLanguage() {
+      const lang = document.getElementById("language").value;
+
+      if (lang === "no") {
+        document.getElementById("working-text").textContent = "Vi jobber hardt!";
+        document.getElementById("main-heading").innerHTML = "Vi er <span>lansering</span> snart";
+        document.getElementById("learn-more-text").textContent = "Lær mer";
+        document.getElementById("days-text").textContent = "Dager";
+        document.getElementById("hours-text").textContent = "Timer";
+        document.getElementById("minutes-text").textContent = "Minutter";
+        document.getElementById("seconds-text").textContent = "Sekunder";
+      } else if (lang === "es") {
+        document.getElementById("working-text").textContent = "¡Estamos trabajando duro!";
+        document.getElementById("main-heading").innerHTML = "Pronto <span>lanzamos</span> producto";
+        document.getElementById("learn-more-text").textContent = "Aprende más";
+        document.getElementById("days-text").textContent = "Días";
+        document.getElementById("hours-text").textContent = "Horas";
+        document.getElementById("minutes-text").textContent = "Minutos";
+        document.getElementById("seconds-text").textContent = "Segundos";
+      } else {
+        document.getElementById("working-text").textContent = "We are working hard!";
+        document.getElementById("main-heading").innerHTML = "We're <span>launching</span> soon";
+        document.getElementById("learn-more-text").textContent = "Learn more";
+        document.getElementById("days-text").textContent = "Days";
+        document.getElementById("hours-text").textContent = "Hours";
+        document.getElementById("minutes-text").textContent = "Minutes";
+        document.getElementById("seconds-text").textContent = "Seconds";
+      }
+    }
+  </script>
+</body>
+</html>
